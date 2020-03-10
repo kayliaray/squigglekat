@@ -1,4 +1,4 @@
-root{
+:root{
   --lightest: #FCF7FF;
   --light: #BB9CC7;
   --accent:#9d4e57; /*when using as background, only use lightest as text*/
