@@ -1,0 +1,25 @@
+root{
+  --lightest: #FCF7FF;
+  --light: #BB9CC7;
+  --accent:#9d4e57; /*when using as background, only use lightest as text*/
+  --medium: #60537A; /*when using as background, only use lightest as text*/
+  --dark: #471543;
+  --heading: font-family: "Calistoga", cursive;
+  --content: font-family: "Alice", serif;
+  --secondary:font-family: "EB Garamond", serif;
+  
+  }
+  
+body{
+  background-color: var(--lightest);
+background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23bb9cc7' fill-opacity='0.13'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1{
+  color: var(--medium);
+  font-family: var(--heading);
+}
+p{
+  color: var(--dark);
+  font-family: var(--content);
+}
