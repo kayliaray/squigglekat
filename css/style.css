@@ -1,25 +1,58 @@
-:root{
-  --lightest: #FCF7FF;
-  --light: #BB9CC7;
-  --accent:#9d4e57; /*when using as background, only use lightest as text*/
-  --medium: #60537A; /*when using as background, only use lightest as text*/
-  --dark: #471543;
-  --heading: font-family: "Calistoga", cursive;
-  --content: font-family: "Alice", serif;
-  --secondary:font-family: "EB Garamond", serif;
-  
-  }
-  
-body{
-  background-color: var(--lightest);
-background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23bb9cc7' fill-opacity='0.13'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+:root {
+  --color1: #EFEBFE;
+  /*As background, do not use 2 or1 as text*/
+  --color2: #8C9382;
+  --color3: #36516D;
+  /*when using as background, only use lightest as text*/
+  --color4: #636189;
+  /*when using as background, only use lightest as text*/
+  --color5: #3B1F2B;
+  --heading: "Alice", serif;
+  --content: "Actor", sans-serif;
 }
 
-h1{
-  color: var(--medium);
+body {
+  background-color: var(--color1);
+  font-size: 130%;
+}
+
+h1 {
   font-family: var(--heading);
+  color: var(--color3);
 }
-p{
-  color: var(--dark);
-  font-family: var(--content);
+
+p {
+  color: var(--color5);
+  text-align: left;
 }
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.25 [end] 0.5in 1fr;
+  padding: 0.5in 0;
+}
+
+article * {
+  grid-column: start / end;
+}
+
+@media (max-width: 8.5in) {
+  article {
+    grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr;
+  }
+}
+
+img.size-1, img.size-2, img.size-3, img.size-4 {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.size-1 {grid-column: 4/5;}
+.size-2 {grid-column: 3/6;}
+.size-3 {grid-column: 2/7;}
+.size-4 {grid-column: 1/8;}
