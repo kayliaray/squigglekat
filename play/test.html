@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Quiz Generator</title>
+    <meta name="description" content="Test for generator">
+    <meta name="author" content="Kat DuBrey">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+            <td>
+                <div style="width:600px; margin-left:auto; margin-right:auto; display:block;">
+                    <h2>Blackboard Quiz Generator</h2>
+                    <p style="font-weight: bold;">
+                        Welcome to College of Southern Idaho's Blackboard Quiz Generator.
+                    </p>
+                    <p>
+                        Note: This tool is not being maintained. It is recomended that users find a new tool.
+                    </p>
+                    <p style="padding:0;margin:0;">(<a target="_blank" href="doc.asp">Documentation</a>)</p>
+                    <p> Developers: The College of Southern Idaho's Blackboard Quiz Generator code is now open source
+                        and available <a
+                            href="https://github.com/college-of-southern-idaho/blackboard-quiz-generator">in this GitHub
+                            repository</a>.
+                        Please see the documentation in that repository's README.md file for more information.
+                    </p>
+
+
+
+                    <p>
+                        Quiz Name:
+                        <input name="quizname" type="text" size="30" id="quizname" /><br />
+                    </p>
+                    <p>Add a template to the quiz maker:
+                        <select id='type'>
+                            <option value="MC">Multiple Choice</option>
+                            <option value="TF">True/False</option>
+                            <option value="E">Essay</option>
+                            <option value="FB">Fill in the Blank</option>
+                            <option value="M">Matching</option>
+                        </select>
+                        <button id="template">Add Template</button>
+                    </p>
+                    <p>
+                        Type or paste in your questions:<br />
+                        <textarea name="inputbox" id="inputbox" style="width: 550px; height: 400px"></textarea><br />
+                        <input type="submit" name="Button1" value="Create Quiz" id="Button1" /><br />
+
+
+                    </p>
+
+                    &nbsp;<br />
+                    <br />
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+
+
+        document.getElementById("template").addEventListener('click', function () {
+            var template = "";
+        var type = $('type');
+        alert(type);
+        switch (type) {
+            case 'MC':
+                template ="test mc";
+                break;
+            case 'TF':
+                template ="test tf";
+                break;
+            case 'E':
+                template ="test e";
+                break;
+            case 'FB':
+                template ="";
+                break;
+            case 'M':
+                template ="";
+                break;
+        }
+            var text = document.getElementById('inputbox');
+            text.value += ' template';
+        });
+    </script>
+
+    </script>
+</body>
