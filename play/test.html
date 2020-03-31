@@ -14,34 +14,24 @@
         <tr>
             <td>
                 <div style="width:600px; margin-left:auto; margin-right:auto; display:block;">
-                    <h2>Blackboard Quiz Generator</h2>
-                    <p style="font-weight: bold;">
-                        Welcome to College of Southern Idaho's Blackboard Quiz Generator.
-                    </p>
-                    <p>
-                        Note: This tool is not being maintained. It is recomended that users find a new tool.
-                    </p>
-                    <p style="padding:0;margin:0;">(<a target="_blank" href="doc.asp">Documentation</a>)</p>
-                    <p> Developers: The College of Southern Idaho's Blackboard Quiz Generator code is now open source
-                        and available <a
-                            href="https://github.com/college-of-southern-idaho/blackboard-quiz-generator">in this GitHub
-                            repository</a>.
-                        Please see the documentation in that repository's README.md file for more information.
-                    </p>
+                    <img src="./images/new daemen.png"><br>
+                    <h1>Blackboard Quiz Generator</h1>
+                    
+                    <ul>
+                    <li style="padding:0;margin:0;">For full formatting notes, see (<a target="_blank" href="doc.asp">Documentation</a>)</li>
+<li>If using the 'add template' button, be sure to correct the question numbers</li></ul>
 
-
-
-                    <p>
+                    <p> 
                         Quiz Name:
                         <input name="quizname" type="text" size="30" id="quizname" /><br />
-                    </p>
+                   </p>
                     <p>Add a template to the quiz maker:
                         <select id='type'>
                             <option value="MC">Multiple Choice</option>
                             <option value="TF">True/False</option>
                             <option value="E">Essay</option>
                             <option value="FB">Fill in the Blank</option>
-                            <option value="M">Matching</option>
+                            <option value="A">Matching</option>
                         </select>
                         <button id="template">Add Template</button>
                     </p>
@@ -63,31 +53,38 @@
 
 
         document.getElementById("template").addEventListener('click', function () {
-            var template = "";
+            var template = "no";
         var type = document.getElementById('type').value;
-        alert(type);
         switch (type) {
             case 'MC':
                 template =
-                "1. Which of the following is a prime number?\na) 4 \n*b) 5 \nc) 6";
+                "\n\n#. Which of the following is a prime number?\na) 4 \n*b) 5 \nc) 6";
                 break;
             case 'TF':
-                template ="test tf";
+                template ="\n\n#. 3 is a prime number. \nTrue";
                 break;
             case 'E':
-                template ="test e";
+                template ="\n\n#. Tell me your life story.";
                 break;
             case 'FB':
-                template ="";
+                template ="\n\nblank #. Two plus two equals _____.\na. four\nb. 4";
                 break;
-            case 'M':
-                template ="";
+            case 'A':
+                template ="\n\nmatch #. Match the number with its spelling. :)\na. 3 / three\nb. 1 / one\nc. 12 / twelve\nd. 4 /\ne. / fore";
                 break;
         }
             var text = document.getElementById('inputbox');
-            text.value += ' template';
+            text.value +=template;
         });
     </script>
 
     </script>
 </body>
+<footer>
+    <p> Developers: The College of Southern Idaho's Blackboard Quiz Generator code is now open source
+        and available <a
+            href="https://github.com/college-of-southern-idaho/blackboard-quiz-generator">in this GitHub
+            repository</a>.
+        Please see the documentation in that repository's README.md file for more information.
+    </p>
+</footer>
