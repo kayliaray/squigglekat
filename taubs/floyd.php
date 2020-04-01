@@ -4,12 +4,7 @@ function floydWarshall($graph, $V, $INF)
     /* dist[][] will be the output matrix  
     that will finally have the shortest  
     distances between every pair of vertices */
-    $dist = array(
-        array(0, 0, 0, 0),
-        array(0, 0, 0, 0),
-        array(0, 0, 0, 0),
-        array(0, 0, 0, 0)
-    );
+    $dist = array(array());
 
     /* Initialize the solution matrix same  
     as input graph matrix. Or we can say the  
@@ -100,17 +95,9 @@ function printSolution($dist, $V, $INF)
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
     <title>Project for Taubs</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 </head>
@@ -138,31 +125,39 @@ function printSolution($dist, $V, $INF)
             <h1>Taubs' Project</h1>
             <?php
             // Driver Code 
-
-            // Number of vertices in the graph  
-            $V = 4;
-
             /* Define infinite as a large enough  
-value. This value will be used for 
-vertices not connected to each other */
+                value. This value will be used for 
+                vertices not connected to each other */
             $INF = 99999;
-            /*$graph = array(
-                    array(0, 1, 2, $INF, $INF, $INF, $INF),
-                    array(1, 0, 3, $INF, 4, $INF, $INF),
-                    array(2, 3, 0, 3, 2, $INF, $INF),
-                    array(INF, $INF, 3, 0, $INF, 3, $INF),
-                    array(INF, 4, 2, $INF, 0, 4, 5),
-                    array(INF, $INF, $INF, 3, 4, 0, 3),
-                    array(INF, $INF, $INF, $INF, 5, 3, 0)
-                );*/
 
-            $graph = array(
-                array(0, 5, $INF, 10),
-                array($INF, 0, 3, $INF),
-                array($INF, $INF, 0, 1),
-                array($INF, $INF, $INF, 0)
-            );
+            //THIS VARIABLE CONTROLS WHICH GRAPH WE USE FOR TESTING PURPOSES
+            //1 for Taubs' graph
+            //2 for the nice simple example graph I love so much
+            //If I had a webserver we could even make buttons it'd be so cute
+            $test = 2;
 
+            switch ($test) {
+                case 1:
+                    $V = 7;
+                    $graph = array(
+                        array(0, 1, 2, $INF, $INF, $INF, $INF),
+                        array(1, 0, 3, $INF, 4, $INF, $INF),
+                        array(2, 3, 0, 3, 2, $INF, $INF),
+                        array(INF, $INF, 3, 0, $INF, 3, $INF),
+                        array(INF, 4, 2, $INF, 0, 4, 5),
+                        array(INF, $INF, $INF, 3, 4, 0, 3),
+                        array(INF, $INF, $INF, $INF, 5, 3, 0)
+                    );
+                    break;
+                case 2:
+                    $V = 4;
+                    $graph = array(
+                        array(0, 5, $INF, 10),
+                        array($INF, 0, 3, $INF),
+                        array($INF, $INF, 0, 1),
+                        array($INF, $INF, $INF, 0)
+                    );
+            }
             ?>
             <p>For array defined as follows: <?php print_r($graph) ?></p>
             <p><?php echo (floydWarshall($graph, $V, $INF)); ?></p>

@@ -15,14 +15,16 @@ body {
   background-color: var(--color1);
   font-size: 130%;
 }
-
-h1 {
+nav.navbar#main-nav {
+  background-color: var(--color2);
+}
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading);
-  color: var(--color3);
+  color: var(--color5);
 }
 
-p {
-  color: var(--color5);
+p, ul, li {
+  color: var(--color4);
   text-align: left;
 }
 
